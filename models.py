@@ -9,3 +9,9 @@ class Student(db.Model):
     email = db.Column(db.String(60), unique=True)
     class_name = db.Column(db.String(60))
     admitted_at = db.Column(db.DateTime, default=datetime.now())
+
+class Teacher(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), nullable=False, unique=True)
+    subject = db.Column(db.String)
+    join = db.Column(db.DateTime, default = datetime.now())
